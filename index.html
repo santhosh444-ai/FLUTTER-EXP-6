@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flutter Animation - Experiment 6</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+    body {
+      background-color: #faf7fd;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      padding: 24px 32px;
+      font-size: 22px;
+      color: #1c1b1f;
+      font-weight: 400;
+    }
+    .container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+    }
+    .animated-box {
+      width: 150px;
+      height: 150px;
+      background-color: #2196f3;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 28px;
+      font-weight: 700;
+      transition: all 1s ease-in-out;
+    }
+    .animated-box.large {
+      width: 300px;
+      height: 300px;
+    }
+    .animate-btn {
+      background-color: #f3edf7;
+      color: #6750a4;
+      border: 1px solid #e7e0ec;
+      padding: 10px 28px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .animate-btn:hover {
+      background-color: #e8def8;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">Flutter Animation</div>
+  <div class="container">
+    <div id="box" class="animated-box">Flutter</div>
+    <button class="animate-btn" onclick="toggleAnimation()">Animate</button>
+  </div>
+
+  <script>
+    function toggleAnimation() {
+      const box = document.getElementById('box');
+      box.classList.toggle('large');
+    }
+  </script>
+</body>
+</html>
